@@ -68,15 +68,3 @@ npx expo export --platform android
 **O que eu pedi:** carregar os dados da série na tela de detalhe ao abrir e ao retornar para ela.
 **O que a IA sugeriu (resumo):** a primeira versão criava uma flag de foco, mas não a consultava antes de atualizar o estado com o resultado assíncrono.
 **O que eu fiz:** revisei o fluxo, passei uma verificação de foco ao carregamento e passei a ignorar resultados após a tela perder foco; o TypeScript e o bundle Android passaram.
-
-## Cuidado: a IA erra — e erra de jeitos previsíveis
-
-Fique atento a sugestões que contrariam o que vimos em aula. Exemplos comuns:
-
-- Montar SQL com template string (`` `... WHERE id = ${id}` ``) em vez de `?`.
-- Usar `boolean` para `concluida`.
-- Mandar instalar pacote do Expo com `npm install` em vez de `npx expo install`.
-- Sugerir a API antiga do `expo-sqlite` (`openDatabase`, `transaction`) ou uma versão do NativeWind diferente da 4.
-- Colocar chamadas ao banco direto no componente, ignorando o repositório.
-
-Quando pegar um desses, **registre no diário**. Encontrar o erro da IA vale mais do que não ter errado.
